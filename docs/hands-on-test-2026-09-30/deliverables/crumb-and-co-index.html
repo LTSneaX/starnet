@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crumb &amp; Co. — Neighbourhood Bakery, 12 Harbour Lane</title>
+<meta name="description" content="Crumb & Co. bakes naturally leavened sourdough and cardamom buns every morning at 12 Harbour Lane. Open Tuesday to Sunday, 7am–3pm.">
+<style>
+  :root {
+    --flour: #fbf6ee;
+    --crust: #7a4a24;
+    --crust-dark: #4e2d13;
+    --butter: #f2c46d;
+    --ink: #2b2118;
+    --muted: #6d5c4d;
+    --line: #e8dccb;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    color: var(--ink);
+    background: var(--flour);
+    line-height: 1.6;
+  }
+  a { color: var(--crust); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header.nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(251, 246, 238, 0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .logo { font-size: 1.35rem; font-weight: 700; letter-spacing: 0.02em; color: var(--crust-dark); text-decoration: none; }
+  .logo span { color: var(--butter); -webkit-text-stroke: 0.6px var(--crust); }
+  nav ul { list-style: none; display: flex; gap: 22px; margin: 0; padding: 0; }
+  nav a { text-decoration: none; color: var(--muted); font-size: 0.95rem; }
+  nav a:hover { color: var(--crust); }
+
+  .hero {
+    padding: 96px 0 80px;
+    background:
+      radial-gradient(circle at 85% 20%, rgba(242, 196, 109, 0.35), transparent 45%),
+      radial-gradient(circle at 10% 90%, rgba(122, 74, 36, 0.12), transparent 40%);
+  }
+  .hero .eyebrow { text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.8rem; color: var(--crust); margin: 0 0 12px; }
+  .hero h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); line-height: 1.05; margin: 0 0 18px; color: var(--crust-dark); }
+  .hero p.lead { font-size: 1.2rem; max-width: 34rem; color: var(--muted); margin: 0 0 30px; }
+  .btn {
+    display: inline-block; padding: 13px 24px; border-radius: 999px;
+    background: var(--crust); color: #fff; text-decoration: none; font-weight: 600;
+    transition: background 0.2s;
+  }
+  .btn:hover { background: var(--crust-dark); }
+  .btn.ghost { background: transparent; color: var(--crust); border: 1.5px solid var(--crust); margin-left: 10px; }
+  .btn.ghost:hover { background: rgba(122, 74, 36, 0.08); }
+
+  section { padding: 72px 0; }
+  section h2 { font-size: 2rem; color: var(--crust-dark); margin: 0 0 8px; }
+  section .sub { color: var(--muted); margin: 0 0 36px; }
+
+  .menu { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+  .item {
+    background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+    padding: 24px; position: relative;
+  }
+  .item.star { border-color: var(--butter); box-shadow: 0 6px 24px rgba(122, 74, 36, 0.10); }
+  .item .tag {
+    position: absolute; top: -11px; left: 20px; background: var(--butter); color: var(--crust-dark);
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 999px;
+  }
+  .item h3 { margin: 4px 0 6px; font-size: 1.2rem; }
+  .item p { margin: 0 0 14px; color: var(--muted); font-size: 0.97rem; }
+  .item .price { font-weight: 700; color: var(--crust); }
+
+  .visit { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  table.hours { width: 100%; border-collapse: collapse; }
+  table.hours td { padding: 10px 0; border-bottom: 1px dashed var(--line); }
+  table.hours td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  table.hours tr.closed td { color: #a39383; }
+  .address { font-size: 1.15rem; margin: 0 0 6px; }
+  .note { color: var(--muted); font-size: 0.95rem; }
+
+  .contact-card {
+    background: var(--crust-dark); color: var(--flour); border-radius: var(--radius);
+    padding: 40px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: center;
+  }
+  .contact-card h2 { color: var(--butter); }
+  .contact-card p { color: #e9dccb; }
+  .contact-card ul { list-style: none; padding: 0; margin: 0; }
+  .contact-card li { margin: 0 0 10px; }
+  .contact-card a { color: var(--butter); }
+  .placeholder { font-size: 0.8rem; color: #c7b39c; font-style: italic; }
+
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 0.9rem; text-align: center; }
+
+  @media (max-width: 720px) {
+    nav ul { gap: 14px; }
+    nav li.hide-sm { display: none; }
+    .visit-grid, .contact-card { grid-template-columns: 1fr; }
+    .btn.ghost { margin: 12px 0 0; }
+    .hero { padding: 64px 0 56px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Crumb <span>&amp;</span> Co.</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#visit">Hours &amp; location</a></li>
+        <li class="hide-sm"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Neighbourhood bakery · Harbour Lane</p>
+      <h1>Slow bread,<br>warm buns,<br>early mornings.</h1>
+      <p class="lead">We bake naturally leavened sourdough and our cardamom buns fresh every morning. Come early — the buns rarely see noon.</p>
+      <a class="btn" href="#menu">See what's baking</a>
+      <a class="btn ghost" href="#visit">Find us</a>
+    </div>
+  </section>
+
+  <section id="menu">
+    <div class="wrap">
+      <h2>Menu highlights</h2>
+      <p class="sub">A short list, done properly. Everything is baked on site the same morning.</p>
+      <div class="menu">
+        <article class="item star">
+          <span class="tag">House favourite</span>
+          <h3>Cardamom buns</h3>
+          <p>Soft, knotted and generous with freshly ground cardamom and a pearl-sugar crust.</p>
+          <span class="price">$4.50</span>
+        </article>
+        <article class="item star">
+          <span class="tag">Signature loaf</span>
+          <h3>Country sourdough</h3>
+          <p>A 36-hour ferment, blistered dark crust and an open, tangy crumb.</p>
+          <span class="price">$9.00</span>
+        </article>
+        <article class="item">
+          <h3>Seeded rye</h3>
+          <p>Dense, deeply flavoured and packed with sunflower, flax and pumpkin seeds.</p>
+          <span class="price">$10.00</span>
+        </article>
+        <article class="item">
+          <h3>Morning coffee</h3>
+          <p>Filter or flat white, made to go with whatever came out of the oven last.</p>
+          <span class="price">from $3.50</span>
+        </article>
+      </div>
+      <p class="placeholder">Prices are sample placeholders — confirm with the client before launch.</p>
+    </div>
+  </section>
+
+  <section id="visit" class="visit">
+    <div class="wrap visit-grid">
+      <div>
+        <h2>Hours</h2>
+        <p class="sub">Open six days. Closed Mondays so the starter can rest (and so can we).</p>
+        <table class="hours" aria-label="Opening hours">
+          <tr class="closed"><td>Monday</td><td>Closed</td></tr>
+          <tr><td>Tuesday</td><td>7:00am – 3:00pm</td></tr>
+          <tr><td>Wednesday</td><td>7:00am – 3:00pm</td></tr>
+          <tr><td>Thursday</td><td>7:00am – 3:00pm</td></tr>
+          <tr><td>Friday</td><td>7:00am – 3:00pm</td></tr>
+          <tr><td>Saturday</td><td>7:00am – 3:00pm</td></tr>
+          <tr><td>Sunday</td><td>7:00am – 3:00pm</td></tr>
+        </table>
+      </div>
+      <div>
+        <h2>Location</h2>
+        <p class="sub">Right on the lane, look for the smell.</p>
+        <p class="address"><strong>12 Harbour Lane</strong></p>
+        <p class="note">Street parking along the lane; bike rack out front.</p>
+        <p><a class="btn" href="https://www.openstreetmap.org/search?query=12%20Harbour%20Lane" target="_blank" rel="noopener">Open in maps</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-card">
+        <div>
+          <h2>Say hello</h2>
+          <p>Ordering a whole tray of buns for the office, or need a loaf held for you? Get in touch and we'll set it aside.</p>
+        </div>
+        <ul>
+          <li>Phone: <a href="tel:+10000000000">(000) 000-0000</a> <span class="placeholder">placeholder</span></li>
+          <li>Email: <a href="mailto:hello@crumbandco.example">hello@crumbandco.example</a> <span class="placeholder">placeholder</span></li>
+          <li>Visit: 12 Harbour Lane</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© Crumb &amp; Co. · 12 Harbour Lane · Tue–Sun 7am–3pm</div>
+</footer>
+
+</body>
+</html>

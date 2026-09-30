@@ -1,0 +1,19 @@
+QA findings — Loop & Pedal page (from source; I could not render it)
+
+BLOCKERS (fix before the client sees it)
+1. Internal note visible to the public (line 118): "Service descriptions are drafted from the brief — confirm scope and pricing with the client." That is a studio note printed on the live page.
+2. Placeholder email shipped as a real link (line 155): mailto:hello@loopandpedal.example with a visible "placeholder" tag. .example addresses bounce; customers who email will get nothing.
+
+SHOULD FIX
+3. Map link is ambiguous (line 141): OpenStreetMap search for "88 Canal Street" with no town or postcode can land on the wrong Canal Street.
+4. Invented service details (lines 106–116): "bolts checked to torque", "motor and battery checks" are not in the brief. Plausible, but the client has not confirmed them.
+5. Header call button hidden on phones (line 71, .call display:none under 720px). Phone users are the ones most likely to tap-to-call; the hero button still works, but the always-visible header CTA is gone on the device that needs it.
+
+MINOR
+6. Wheel emoji 🛞 (line 108) is a recent Unicode character; older phones show an empty box.
+7. tel: links use 5550142 with no area or country code (lines 80, 89, 154). Works for local callers only.
+8. Sunday is shown as "Closed". The brief only says Mon–Sat; almost certainly right, but it is an inference.
+
+CHECKED, NO ISSUE
+- Address, Mon–Sat 9:00am–6:00pm hours, phone 555-0142 and all three services from the brief are present and consistent across hero, table, contact and footer.
+- No external scripts or assets; page is self-contained.
