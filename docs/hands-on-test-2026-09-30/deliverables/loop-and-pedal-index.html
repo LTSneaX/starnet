@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loop &amp; Pedal — Bike Repair, 88 Canal Street</title>
+<meta name="description" content="Loop & Pedal repairs bikes and e-bikes at 88 Canal Street: tune-ups, flat fixes and e-bike servicing. Open Monday to Saturday, 9am–6pm. Call 555-0142.">
+<style>
+  :root {
+    --bg: #0f1a17;
+    --panel: #15241f;
+    --line: #25392f;
+    --text: #e8f1ec;
+    --muted: #9db3a8;
+    --lime: #c6f24e;
+    --lime-dark: #9fcb24;
+    --radius: 12px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--lime); }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.01em; color: var(--text); text-decoration: none; }
+  .brand b { color: var(--lime); }
+  .call { font-weight: 700; text-decoration: none; border: 1.5px solid var(--lime); padding: 8px 14px; border-radius: 999px; }
+
+  .hero { padding: 88px 0 72px; }
+  .hero h1 { font-size: clamp(2.3rem, 6vw, 4rem); line-height: 1.05; margin: 0 0 18px; letter-spacing: -0.02em; }
+  .hero h1 span { color: var(--lime); }
+  .hero p { font-size: 1.15rem; color: var(--muted); max-width: 36rem; margin: 0 0 28px; }
+  .btn { display: inline-block; background: var(--lime); color: #10200a; font-weight: 800; text-decoration: none; padding: 13px 22px; border-radius: 999px; }
+  .btn:hover { background: var(--lime-dark); }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 26px; color: var(--muted); font-size: 0.95rem; }
+
+  section { padding: 64px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 1.9rem; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 0 0 32px; }
+
+  .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  .card .icon { font-size: 1.6rem; margin-bottom: 8px; }
+  .card h3 { margin: 0 0 6px; font-size: 1.15rem; }
+  .card p { margin: 0; color: var(--muted); }
+
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  table { width: 100%; border-collapse: collapse; }
+  td { padding: 10px 0; border-bottom: 1px solid var(--line); }
+  td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+  tr.closed td { color: #6f857a; }
+  .address { font-size: 1.2rem; font-weight: 700; margin: 0 0 6px; }
+
+  .contact { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: center; }
+  .contact .phone { font-size: 2rem; font-weight: 800; color: var(--lime); text-decoration: none; }
+  .placeholder { font-size: 0.8rem; color: #6f857a; font-style: italic; }
+
+  footer { padding: 32px 0 44px; color: var(--muted); font-size: 0.9rem; text-align: center; border-top: 1px solid var(--line); }
+
+  @media (max-width: 720px) {
+    .split, .contact { grid-template-columns: 1fr; }
+    .hero { padding: 60px 0 52px; }
+    .call { padding: 6px 12px; font-size: 0.9rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">Loop <b>&amp;</b> Pedal</a>
+    <a class="call" href="tel:5550142">Call 555-0142</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="border-top:0">
+    <div class="wrap">
+      <h1>Bikes fixed right,<br><span>back on the road fast.</span></h1>
+      <p>Tune-ups, flat fixes and e-bike servicing from the workshop at 88 Canal Street. Bring it in, or call ahead and we'll have a stand ready.</p>
+      <a class="btn" href="tel:5550142">Book a repair: 555-0142</a>
+      <div class="meta">
+        <span>📍 88 Canal Street</span>
+        <span>🕘 Mon–Sat, 9am–6pm</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="sub">The three jobs we do every day.</p>
+      <div class="services">
+        <article class="card">
+          <div class="icon" aria-hidden="true">🔧</div>
+          <h3>Tune-ups</h3>
+          <p>Gears indexed, brakes adjusted, drivetrain cleaned and lubed, bolts checked to torque.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">🛞</div>
+          <h3>Flat fixes</h3>
+          <p>Tube or tubeless, patched or replaced, and the tyre checked for what caused it.</p>
+        </article>
+        <article class="card">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <h3>E-bike servicing</h3>
+          <p>Motor and battery checks, connections, brakes and drivetrain wear for heavier, faster bikes.</p>
+        </article>
+      </div>
+      <!-- TODO (studio): confirm service descriptions with the client -->
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap split">
+      <div>
+        <h2>Hours</h2>
+        <p class="sub">Six days a week.</p>
+        <table aria-label="Opening hours">
+          <tr><td>Monday</td><td>9:00am – 6:00pm</td></tr>
+          <tr><td>Tuesday</td><td>9:00am – 6:00pm</td></tr>
+          <tr><td>Wednesday</td><td>9:00am – 6:00pm</td></tr>
+          <tr><td>Thursday</td><td>9:00am – 6:00pm</td></tr>
+          <tr><td>Friday</td><td>9:00am – 6:00pm</td></tr>
+          <tr><td>Saturday</td><td>9:00am – 6:00pm</td></tr>
+          <tr class="closed"><td>Sunday</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div>
+        <h2>Find the workshop</h2>
+        <p class="sub">Right on the canal.</p>
+        <p class="address">88 Canal Street</p>
+        <!-- TODO (studio): add the town or postcode to this map query once the client confirms it -->
+        <p><a class="btn" href="https://www.openstreetmap.org/search?query=88%20Canal%20Street" target="_blank" rel="noopener">Open in maps</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <h2>Call the workshop</h2>
+          <p class="sub" style="margin:0">Tell us what's wrong and when you can drop it off.</p>
+        </div>
+        <div>
+          <a class="phone" href="tel:5550142">555-0142</a>
+          <!-- TODO (studio): add the client email address once they provide a real one -->
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© Loop &amp; Pedal · 88 Canal Street · Mon–Sat 9am–6pm · 555-0142</footer>
+
+</body>
+</html>
